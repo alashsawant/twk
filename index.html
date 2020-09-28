@@ -1,139 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from caresofts.github.io/dev/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 28 Sep 2020 03:28:25 GMT -->
+<!-- Mirrored from w2d.bananahackers.net/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 28 Sep 2020 03:36:12 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App Example</title>
-</head>
-<script src="dev.html"></script>
-<style>
-    @import url("../external.html?link=https://fonts.googleapis.com/css?family=Open+Sans");
-
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        -webkit-margin-start: 0;
-        -webkit-margin-end: 0;
-    }
-
-    body {
-        background: #ffffff;
-        font-family: 'Open Sans', sans-serif;
-        color: #000000;
-    }
-
-    A {
-        text-decoration: none;
-    }
-
-    /* Set a style for all buttons */
-
-    button {
-        background-color: #ffffff;
-        color: black;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-
-        border-radius: 15px;
-        width: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-</style>
-
-<body>
-
-
-
-    <button id="dev">Developer Options</button>
-    <button id="dial">Dial number</button>
-
-    <button id="send-sms">Send SMS</button>
-
-    <button id="add-contact">Add contact</button>
-    <button id="record">Take picture</button>
-    <button id="open-settings">Open Settings</button>
-
-
+    <meta charset="utf-8">
+    <title>W2D KaiOS Universal Jailbreak</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Luxferre,tbrrss">
+    <meta name="description" content="W2D KaiOS Universal Jailbreak">
+    <meta name="keywords" content="jailbreak,mobile,research,hacking,js,kaios">
+  </head>
+  <body>
+    <header>
+      <h1>W2B</h1>
+    </header>
+    <main>
+      <section>
+        <button id="w2d">Launch Bluetooth menu</button>
+      </section>
+    </main>
+    <footer>
+      <hr>
+      <p>© <a href="../external.html?link=https://bananahackers.net/">BananaHackers</a> 2020 — present<br>credits to Luxferre and tbrrss</p>
+    </footer>
     <script>
-
-        document.getElementById('dev').addEventListener('click', function (e) {
-            if (window.MozActivity) {
-                var act = new MozActivity({
-                    name: "configure",
-                    data: {
-                        target: "device",
-                        section: "developer"
-                    }
-                })
+      document.getElementById('w2d').addEventListener('click', function(e) {
+        if(window.MozActivity) {
+          var act = new MozActivity({
+            name: "configure",
+            data: {
+              target: "device",
+              section: "bluetooth"
             }
-            else {
-                window.alert('This Page Is Work only for educational purposes')
-            }
-        }, false)
-    </script>
-    <script>
-        /* global alert, console */
-"use strict";
-// Install app
-if (navigator.mozApps) {
-    var checkIfInstalled = navigator.mozApps.getSelf();
-    checkIfInstalled.onsuccess = function () {
-        if (checkIfInstalled.result) {
-            // Already installed
-            var installationInstructions = document.querySelector("#installation-instructions");
-            if (installationInstructions) {
-                installationInstructions.style.display = "none";
-            }
+          })
         }
         else {
-            var install = document.querySelector("#install"),
-                manifestURL = location.href.substring(0, location.href.lastIndexOf("../external.html?link=https://caresofts.github.io/")) + "/manifest-hosted.webapp";
-            install.className = "show-install";
-            install.onclick = function () {
-                var installApp = navigator.mozApps.install(manifestURL);
-                installApp.onsuccess = function() {
-                    install.style.display = "none";
-                };
-                installApp.onerror = function() {
-                    alert("Install failed\n\n:" + installApp.error.name);
-                };
-            };
+          window.alert('Please open the page from the device itself!')
         }
-    };
-}
-else {
-    console.log("Open Web Apps not supported");
-}
-
-// Reload content
-var reload = document.querySelector("#reload");
-if (reload) {
-    reload.onclick = function () {
-        location.reload(true);
-    };
-}
+      }, false)
     </script>
 </body>
-
-
-<!-- Mirrored from caresofts.github.io/dev/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 28 Sep 2020 03:28:26 GMT -->
+<!-- Mirrored from w2d.bananahackers.net/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 28 Sep 2020 03:36:17 GMT -->
 </html>
